@@ -1,0 +1,74 @@
+{
+ "actions": [],
+ "creation": "2026-06-16 10:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "user",
+  "query_text",
+  "generated_sql",
+  "row_count",
+  "section_break_1",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "query_text",
+   "fieldtype": "Small Text",
+   "label": "User Query (Voice/Text)",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "generated_sql",
+   "fieldtype": "Code",
+   "label": "AI Generated SQL",
+   "options": "SQL"
+  },
+  {
+   "fieldname": "row_count",
+   "fieldtype": "Int",
+   "label": "Rows Returned",
+   "in_list_view": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-06-16 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Voice Sql Report",
+ "name": "Voice Report Log",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "All"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,43 @@
+[build-system]
+requires = ["flit_core>=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "voice_sql_report"
+authors = [
+    { name = "Mohammed Qutubuddin Zafar", email = "your-email@example.com" }
+]
+description = "AI-powered voice-to-SQL reporting for ERPNext using Claude API"
+requires-python = ">=3.10"
+readme = "README.md"
+dynamic = ["version"]
+dependencies = [
+    "requests~=2.32"
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/voice_sql_report"
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+    "pre-commit",
+]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+    "F", "E", "W", "I", "UP", "B", "RUF",
+]
+ignore = [
+    "B017", "B018", "B023", "B904",
+    "E101", "E402", "E501", "E741",
+    "F401", "F403",
+    "W191", "W291", "W293",
+]
+
+[tool.bench.dev-dependencies]
+# none yet

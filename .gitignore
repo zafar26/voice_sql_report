@@ -1,0 +1,11 @@
+.DS_Store
+*.pyc
+*.egg-info
+*.swp
+tags
+.vscode
+__pycache__/
+*.py[cod]
+node_modules/
+.idea
+*.iml
