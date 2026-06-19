@@ -136,7 +136,17 @@ def ask_claude(user_query: str) -> dict:
         "content-type": "application/json",
     }
 
-    response = requests.post(CLAUDE_API_URL, headers=headers, json=payload, timeout=30)
+    # ✅ ADD THIS: Sanitize headers to strip non-Latin-1 characters
+    sanitized_headers = {}
+    for key, value in headers.items():
+        if isinstance(value, str):
+            # Encode to ASCII, replacing any unicode chars that snuck in
+            sanitized_headers[key] = value.encode("ascii", errors="ignore").decode("ascii")
+        else:
+            sanitized_headers[key] = value
+
+
+    response = requests.post(CLAUDE_API_URL, headers=sanitized_headers, json=payload, timeout=30)
     response.raise_for_status()
     result = response.json()
 
