@@ -10,39 +10,6 @@ powered by the **Claude API**.
 
 ---
 
-## How it works
-
-```
-User speaks: "show me today's sales"
-        |
-        v
-Web Speech API converts speech -> text (browser, no server round-trip)
-        |
-        v
-frappe.call() -> voice_sql_report.api.voice_query.process_voice_query
-        |
-        v
-Python sends ONLY the user's text query to Claude
-(Claude never sees ERPNext data, only DocType/table names it's allowed to use)
-        |
-        v
-Claude returns JSON: { title, sql, html_template, row_template }
-        |
-        v
-Python validates the SQL (SELECT-only, whitelisted tables, no stacked queries)
-        |
-        v
-Python runs the SQL via frappe.db.sql() against the real ERPNext database
-        |
-        v
-Python returns { title, html_template, row_template, data } to the browser
-(html_template/row_template came from Claude; data came from ERPNext — merged client-side)
-        |
-        v
-JavaScript merges `data` into `row_template`, injects into `html_template`,
-renders the table, and enables Print / Export to Excel buttons
-```
-
 ### Why this design is safe
 
 - **Claude never receives ERPNext data.** It only ever sees the user's
