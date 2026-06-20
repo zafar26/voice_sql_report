@@ -5,6 +5,9 @@ request** (e.g. *"show me today's sales"*) and get back a live report
 rendered as an HTML table, with **Print** and **Export to Excel** buttons —
 powered by the **Claude API**.
 
+<img width="1353" height="689" alt="Screenshot 2026-06-18 at 11 29 53 AM" src="https://github.com/user-attachments/assets/7a485e68-e6a4-4615-95c8-ef0f203c877c" />
+<img width="1353" height="325" alt="Screenshot 2026-06-20 at 11 28 59 AM" src="https://github.com/user-attachments/assets/9bed6dd5-85d5-422c-ad87-a0ef81803b38" />
+
 ---
 
 ## How it works
