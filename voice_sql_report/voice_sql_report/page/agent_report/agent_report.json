@@ -1,0 +1,25 @@
+{
+ "doctype": "Page",
+ "module": "Voice Sql Report",
+ "name": "agent-report",
+ "page_name": "agent-report",
+ "standard": "Yes",
+ "title": "AI Agent",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Accounts User"
+  },
+  {
+   "role": "Accounts Manager"
+  },
+  {
+   "role": "Sales User"
+  },
+  {
+   "role": "Sales Manager"
+  }
+ ]
+}
