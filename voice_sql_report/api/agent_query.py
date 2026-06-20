@@ -42,7 +42,9 @@ def get_api_key():
 @frappe.whitelist()
 def process_agent_message(conversation_history, user_message):
     """Main agentic loop — receives full conversation and user message, returns next agent step."""
-    frappe.only_for_logged_in_user()
+
+    if frappe.session.user == "Guest":
+        frappe.throw("Please login to use the AI Agent.", frappe.AuthenticationError)
 
     history = json.loads(conversation_history) if isinstance(conversation_history, str) else conversation_history
     history.append({"role": "user", "content": user_message})
