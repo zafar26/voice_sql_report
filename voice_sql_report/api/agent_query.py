@@ -66,7 +66,7 @@ def process_agent_message(conversation_history, user_message):
     response = requests.post(CLAUDE_API_URL, headers=headers, json=payload, timeout=30)
     response.raise_for_status()
     data = response.json()
-
+    print(data["usage"], "\n\n\n\n\n Usage")
     raw_text = data["content"][0]["text"]
 
     # Parse JSON from Claude response
